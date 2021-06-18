@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace questionexchange
 {
@@ -11,7 +12,7 @@ namespace questionexchange
         }
         //  internally creates "Kestrel"
         public static Microsoft.AspNetCore.Hosting.IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args).UseStartup<Startup>()
+            WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().UseContentRoot(Directory.GetCurrentDirectory())
             .Build();
         }
 

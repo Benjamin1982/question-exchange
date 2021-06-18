@@ -1,12 +1,14 @@
 
 
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+
+ 
 using Microsoft.AspNetCore.Http; // Jetzt Müsste es gehen!
 using Microsoft.Extensions.DependencyInjection;
-
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Builder;
 namespace questionexchange
 {
+    // Sieben Jahre kein SEO
     public class Startup
     {
     
@@ -17,13 +19,28 @@ namespace questionexchange
             saas.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment paas)
+        public void Configure( IApplicationBuilder app, IHostingEnvironment paas)
         {
-            app.UseMvc();
-            // Waiting for updates -...
-            app.Run(async (context) =>
+            if (paas.IsDevelopment())
             {
-                await context.Response.WriteAsync("THE CYCLE REPEATED.. ");
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+               // app.UseHsts();
+            }
+            
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
             });
         }
     } // Klammer hat gefehlt
