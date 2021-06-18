@@ -16,6 +16,7 @@ namespace questionexchange.Models
         public int index { get; set; }
         public Answer() //schema-test: Answer a = new Answer(); Answer b = new Answer(); Console.WriteLine(a._index); Console.WriteLine(b._index);
         {
+            // Am Anfang gilt eine Frage als unbeantwortet
             wasFound = false;
             _index++;
         }
