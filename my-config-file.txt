@@ -1,3 +1,5 @@
 "This is  config file " 
 https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/
-server port = 
+Das fehlt von Haus aus:
+https://jonhilton.net/2016/07/27/how-to-add-mvc-to-your-asp-net-core-web-application/
+server port = ?
