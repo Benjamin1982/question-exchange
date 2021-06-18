@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
  <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PreserveCompilationContext />
     <OutputType>Exe</OutputType>
     <!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
